@@ -6,11 +6,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Home</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" media="screen" href="/public/main.css" />
 </head>
 
 <body>
-
 
     <video poster="http://jonvilma.com/images/granblue-fantasy-5.jpg" playsinline autoplay muted loop>
         <source src="file:///Users/adefahrisyany/Downloads/OnlineYouTube.webm" type="video/webm">
@@ -18,15 +21,7 @@
 
     </video>
     <header>
-        <h1>Brave Fantasia</h1>
-        <nav>
-            <br>
-            <br>
-
-            <a href="#" id="myBtn">Login</a>
-            <a href="/Users/adefahrisyany/Desktop/CSS%20Library/header/video_background/account/index.html" id="myBtn">/Your Account/</a>
-            <a href="#">How to play</a>
-            <a href="#">Contact Us</a>
+        <%- include('../partials/header.ejs') %>
     </header>
 
 
