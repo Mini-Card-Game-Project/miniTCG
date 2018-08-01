@@ -1,27 +1,28 @@
-"use strict";
-const express = require("express");
+
+const express = require('express');
 const app = express();
+const session = require('express-session');
+const routes = require ('./routes')
+const path = require ('path');
 
-const path = require("path");
-var port = process.env.PORT || 3000;
+app.set ('view engine', 'ejs')
+app.set ('views', path.join(__dirname, 'views'))
 
-app.set("view engine", "ejs");
-app.set("views", path.join(__dirname, "views"));
-
-app.use(express.urlencoded({ extended: false }));
-// app.use(express.static(path.join(__dirname, "/public")));
-// app.use(express.static(path.join(__dirname, "/videos")));
+app.use (express.json());
+app.use (express.urlencoded({extended:false}));
 app.use("/public", express.static(path.join(__dirname + "/public")));
 app.use("/videos", express.static(path.join(__dirname + "/videos")));
+// app.use(session({
+  //   secret: 'hello world',
+  //   resave: false,
+  //   saveUninitialized: true,
+  // }))
+
+app.locals.isLoggedIn = require ('./helpers/isLoggedIn');
+  
+app.use('/', routes);
 
 
-
-app.get("/", (req, res) => {
-  res.render("index");
-});
-
-app.listen(port, () => {
-  console.log(`server is connecting to port ${port}....`);
-});
-
-module.exports = app;
+app.listen(3000, ()=> {
+  console.log('listening to 3000')
+})
