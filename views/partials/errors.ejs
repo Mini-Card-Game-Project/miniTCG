@@ -1,0 +1,9 @@
+<% if (errors) { %>
+  <div class="alert">
+    <ul>
+      <% errors.forEach((error) => { %>
+        <li><%= error.message %></li>
+      <% }) %>
+    </ul>
+  </div>
+<% } %>
