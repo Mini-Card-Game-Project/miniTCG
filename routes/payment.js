@@ -9,6 +9,7 @@ router.get ('/tes', (req, res)=> {
   model.Card
   .findAll()
   .then (cards => {
+    
     res.render('payment/tes')
   })
 })

@@ -2,6 +2,7 @@
 const express = require('express');
 const app = express();
 const session = require('express-session');
+const ejs = require ('ejs');
 const routes = require ('./routes')
 const path = require ('path');
 
