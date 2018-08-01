@@ -13,13 +13,11 @@ app.use (express.json());
 app.use (express.urlencoded({extended:false}));
 app.use("/public", express.static(path.join(__dirname + "/public")));
 app.use("/videos", express.static(path.join(__dirname + "/videos")));
-// app.use(session({
-  //   secret: 'hello world',
-  //   resave: false,
-  //   saveUninitialized: true,
-  // }))
-
-app.locals.isLoggedIn = require ('./helpers/isLoggedIn');
+app.use(session({
+    secret: 'hello world',
+    resave: false,
+    saveUninitialized: true,
+  }))
   
 app.use('/', routes);
 
