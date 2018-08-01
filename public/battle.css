@@ -1,0 +1,143 @@
+@font-face {
+  font-family: Moderne Sans;
+  src: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/moderne_sans.woff2);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.UI {
+  text-align: center;
+}
+
+.player1 {
+  width: 50%;
+  height: 100%;
+  float: left;
+}
+
+.status_player1 {
+  /* border: blue solid 3px; */
+  padding-top: 10px;
+
+  height: 20%;
+  position: absolute;
+  bottom: 0;
+  width: 50%;
+  z-index: 9999;
+  background-color: #fff;
+  text-align: right;
+}
+.monster_player1 {
+  /* border: orange solid 3px; */
+  margin-top: 180px;
+  height: 58%;
+}
+
+.image1-leader {
+  width: 280px;
+  float: left;
+  position: absolute;
+}
+.leader_status_player1 {
+  /* border: purple solid 3px; */
+  float: left;
+  width: 280px;
+  height: 150px;
+}
+
+.player2 {
+  width: 50%;
+  height: 100%;
+  display: inline-block;
+}
+
+.status_player2 {
+  /* border: red solid 3px; */
+  padding-top: 10px;
+  height: 20%;
+  position: absolute;
+  bottom: 0;
+  width: 50%;
+  background-color: #fff;
+  text-align: left;
+}
+
+.monster_player2 {
+  /* border: orange solid 3px; */
+  margin-top: 180px;
+  height: 58%;
+}
+.image2-leader {
+  width: 280px;
+  float: right;
+}
+
+.leader_status_player2 {
+  /* border: green solid 3px; */
+  float: right;
+  width: 280px;
+  height: 150px;
+}
+
+.background {
+  /* background: url("https://i.imgur.com/DWWs6c1.jpg"); */
+  margin-top: 0px;
+  height: 800px;
+  /* border: red solid 3px; */
+}
+
+body {
+  margin: 0;
+  background: #000;
+  background-size: cover;
+}
+video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+div#fashion {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+header {
+  position: fixed;
+  width: 100%;
+  text-align: center;
+  color: white;
+  transition: 0.4s;
+  height: 180px;
+}
+header:hover {
+  background: rgba(255, 255, 255, 0.8);
+  color: #000;
+}
+h1 {
+  font-family: Moderne Sans, sans-serif;
+  text-align: center;
+  font-size: 2rem;
+  width: 100%;
+  letter-spacing: 0.5rem;
+}
+nav a {
+  text-decoration: none;
+  color: inherit;
+  padding: 1rem;
+}
+h2 {
+  font-family: Century Schoolbook, Century Schoolbook L, Georgia, serif;
+  font-size: 8vmin;
+  text-align: center;
+  margin: 2rem 3rem 0;
+  mix-blend-mode: overlay;
+  color: #fff;
+  font-weight: 100;
+}

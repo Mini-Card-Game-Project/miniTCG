@@ -7,7 +7,7 @@ const lobby = require('./lobby');
 const isLoggedIn = require ('../helpers/isLoggedIn');
 
 router.get('/', (req, res) => {
-  res.render('home/index')
+  res.render('home/dummy')
 })
 
 router.use('/account', account);

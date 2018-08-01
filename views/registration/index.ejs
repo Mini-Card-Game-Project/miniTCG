@@ -1,71 +1,72 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Page Title</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" media="screen" href="/public/register.css" />
-  <script
-  src="https://code.jquery.com/jquery-3.3.1.min.js"
-  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-  crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
   <script src="/public/registration.js"></script>
 </head>
 
 <body>
-  
-    <div class="container">
-        <div class="wrapper">
-          <ul class="steps">
-            <li class="is-active">Step 1</li>
-            <li>Step 2</li>
-            <li>Step 3</li>
-          </ul>
-          <form class="form-wrapper">
-            <fieldset class="section is-active">
-              <h3>Your Details</h3>
-              <input type="text" name="name" id="name" placeholder="Name">
-              <input type="text" name="email" id="email" placeholder="Email">
-              <div class="button">Next</div>
-            </fieldset>
-            <fieldset class="section">
-              <h3>Account Type</h3>
-              <div class="row cf">
-                <div class="four col">
-                  <input type="radio" name="r1" id="r1" checked>
-                  <label for="r1">
-                    <h4>Designer</h4>
-                  </label>
-                </div>
-                <div class="four col">
-                  <input type="radio" name="r1" id="r2"><label for="r2">
-                    <h4>Developer</h4>
-                  </label>
-                </div>
-                <div class="four col">
-                  <input type="radio" name="r1" id="r3"><label for="r3">
-                    <h4>Project Manager</h4>
-                  </label>
-                </div>
-              </div>
-              <div class="button">Next</div>
-            </fieldset>
-            <fieldset class="section">
-              <h3>Choose a Password</h3>
-              <input type="password" name="password" id="password" placeholder="Password">
-              <input type="password" name="password2" id="password2" placeholder="Re-enter Password">
-              <input class="submit button" type="submit" value="Sign Up">
-            </fieldset>
-            <fieldset class="section">
-              <h3>Account Created!</h3>
-              <p>Your account has now been created.</p>
-              <div class="button">Reset Form</div>
-            </fieldset>
-          </form>
-        </div>
-      </div>
-      <img src="https://i.imgur.com/PAjSdEO.png">
-  
+
+  <div class="container">
+    <div class="wrapper">
+      <ul class="steps">
+        <li class="is-active">Step 1</li>
+        <li>Step 2</li>
+      </ul>
+
+
+      <form class="form-wrapper" action="#" method='POST'>
+        <fieldset class="section is-active">
+          <h3>Your Details</h3>
+          <input type="text" name="name" id="name" placeholder="Name">
+          <input type="text" name="password" id="email" placeholder="password">
+          <div class="button">Next</div>
+        </fieldset>
+
+
+        <fieldset class="section">
+          <h3>Experienced playing Games?</h3>
+          <div class="row cf">
+            <div class="four col">
+              <input type="radio" name="r1" id="r1" checked>
+              <label for="r1">
+                <h4>uh-oh</h4>
+              </label>
+            </div>
+            <div class="four col">
+              <input type="radio" name="r1" id="r2">
+              <label for="r2">
+                <h4>yup</h4>
+              </label>
+            </div>
+            <div class="four col">
+              <input type="radio" name="r1" id="r3">
+              <label for="r3">
+                <h4>Absolutely!</h4>
+              </label>
+            </div>
+          </div>
+          <div class="button">Next</div>
+        </fieldset>
+    
+
+        <fieldset class="section">
+          <h3>Account Created!</h3>
+          <p>Your account has now been created.</p>
+        </fieldset>
+      </form>
+
+    </div>
+  </div>
+  <img src="https://i.imgur.com/PAjSdEO.png">
+
 </body>
+
 </html>
