@@ -7,7 +7,7 @@ router.get('/', (req, res) => {
     where: {username: req.session.username}
   })
   .then(player => {
-    res.send(player);
+    res.render('account/index', {player});
   })
 })
 

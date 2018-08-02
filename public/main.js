@@ -16,7 +16,7 @@
     
     // When the user clicks on <span> (x), close the modal
     span.onclick = function() {
-        alert(" hello ")
+        alert("")
         modal.style.display = "none";
     }
     

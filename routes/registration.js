@@ -2,7 +2,7 @@ const router = require('express').Router();
 const model = require('../models');
 
 router.get ('/', (req, res)=> {
-  res.render ('registration/index');
+  res.render ('registration/index', {errors:null});
 })
 
 router.post ('/', (req, res)=> {
@@ -15,6 +15,7 @@ router.post ('/', (req, res)=> {
   model.Player
   .create(newPlayer)
   .then(()=> {
+    req.session.username = req.body.username
     res.redirect('/account');
   })
   .catch(err => {
