@@ -1,0 +1,12 @@
+<% deck.forEach(card => { %>
+  <div class="gallery">
+      <img src="<%= card.image%>" alt="5Terre" width="270" height="270">
+      <div class="desc">Name: <%= card.name %></div>
+      <div class="desc">Rarity: <%= card.rarity %></div>
+      <div class="desc">Element: <%= card.element %></div>
+      <div class="desc">Attack: <%= card.attack %></div>
+      <div class="desc">Speed: <%= card.speed %></div>
+      <div class="desc">Effect: <%= card.effect %></div>
+      <div class="desc">Type: <%= card.type %></div>
+    </div>
+   <% }) %> 

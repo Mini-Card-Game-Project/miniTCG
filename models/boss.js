@@ -6,7 +6,8 @@ module.exports = (sequelize, DataTypes) => {
     effect: DataTypes.STRING
   }, {});
   Boss.associate = function(models) {
-    // associations can be defined here
+    Boss.belongsToMany(models.Card, {through: models.BossCard});
+    Boss.hasMany(models.BossCard);
   };
   return Boss;
 };

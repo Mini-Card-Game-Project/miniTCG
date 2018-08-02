@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+ <head>
+    <%- include('../partials/head.ejs') %>
+    <style>
+      div.gallery {
+    margin: 5px;
+    border: 1px solid #ccc;
+    float: left;
+    width: 180px;
+}
+ div.gallery:hover {
+    border: 1px solid #777;
+}
+ div.gallery img {
+    width: 100%;
+    height: auto;
+}
+ div.desc {
+    padding: 15px;
+    text-align: center;
+}
+    </style>
+</head>
+ <body>
+    <header>
+            <%- include ./../partials/header.ejs %>
+    </header>
+    <section class="content">
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <h1>Cards on the deck:</h1>
+        <br>
+        <%- include ./../partials/loopingDeck.ejs %>
+      
+           <br>
+          <br>
+          <a href="/decklist/edit">Edit deck</a>
+          
+          <br>
+          <br>
+          <br>
+          <h1>Cards you own:</h1>
+         <%- include ./../partials/loopingCard.ejs %>
+        
+    </section>
+ </body>
+ </html> 

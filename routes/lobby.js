@@ -1,7 +1,13 @@
 const router = require('express').Router();
+const model = require('../models');
 
 router.get ('/', (req, res)=> {
-  res.render ('lobby/index')
+  model.Lobby
+  .findAll({
+  })
+  .then(player => {
+    res.json(player)
+  })
 })
 
 module.exports = router;

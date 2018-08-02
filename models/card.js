@@ -16,7 +16,10 @@ module.exports = (sequelize, DataTypes) => {
     {}
   );
   Card.associate = function(models) {
-    // associations can be defined here
+    Card.belongsToMany(models.Boss, {through: models.BossCard});
+    Card.hasMany(models.BossCard);
+    Card.belongsToMany(models.Player, {through: models.CardPlayer});
+    Card.hasMany(models.CardPlayer);
   };
   return Card;
 };

@@ -20,6 +20,15 @@ module.exports = {
       avatar: {
         type: Sequelize.STRING
       },
+      wins: {
+        type: Sequelize.INTEGER
+      },
+      loses: {
+        type: Sequelize.INTEGER
+      },
+      deckCards: {
+        type: Sequelize.STRING
+      },
       createdAt: {
         defaultValue:new Date(),
         allowNull: false,
