@@ -1,11 +1,12 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
   var Lobby = sequelize.define('Lobby', {
-    PlayerId: DataTypes.INTEGER,
-    PlayerId: DataTypes.INTEGER
+    Player1Id: DataTypes.INTEGER,
+    Player2Id: DataTypes.INTEGER
   }, {});
   Lobby.associate = function(models) {
-    // associations can be defined here
+    Lobby.belongsTo(models.Player, {as: 'Player1', foreignKey: 'Player1Id'});
+    Lobby.belongsTo(models.Player, {as: 'Player2', foreignKey: 'Player2Id'});
   };
   return Lobby;
 };

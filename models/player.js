@@ -28,7 +28,12 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
 
   Player.associate = function(models) {
-    // associations can be defined here
+    Player.belongsToMany(models.Card, {through: models.CardPlayer});
+    Player.hasMany(models.CardPlayer);
+    Player.hasMany(models.Lobby, { as: 'Player2', foreignKey: 'Player2Id' });
+    Player.hasMany(models.Lobby, { as: 'Player1', foreignKey: 'Player1Id' });
+    Player.belongsToMany(Player, { as: 'Player1', through: models.Lobby, foreignKey: 'Player1Id' })
+    Player.belongsToMany(Player, { as: 'Player2', through: models.Lobby, foreignKey: 'Player2Id' })
   };
 
   Player.hook('beforeCreate', (player, options) => {

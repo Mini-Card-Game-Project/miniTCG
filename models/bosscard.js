@@ -5,7 +5,8 @@ module.exports = (sequelize, DataTypes) => {
     BossId: DataTypes.INTEGER
   }, {});
   BossCard.associate = function(models) {
-    // associations can be defined here
+    BossCard.belongsTo(models.Boss);
+    BossCard.belongsTo(models.Card);
   };
   return BossCard;
 };
