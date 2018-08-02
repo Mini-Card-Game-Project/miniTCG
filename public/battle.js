@@ -107,9 +107,5 @@ function engage() {
 // $("#id").
 
 {
-  /* <embed src="/audio/NieR Automata OST - Memories of Dust (Dynamic - Vocals).mp3" width="180" height="90" loop="true" autostart="false"
-hidden="true" />
 
-<embed src="/audio/Cant escape from crossing fate (without music).mp3" width="180" height="90" loop="true" autostart="false"
-hidden="true" /> */
 }
