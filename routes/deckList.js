@@ -7,7 +7,6 @@ router.get('/', (req, res) => {
     where: {username: req.session.username},
     include: [{
       model: model.Card,
-      where: { id: { $notIn: arrDeckList} }
   }]
   })
   .then(player => {
@@ -15,7 +14,7 @@ router.get('/', (req, res) => {
     return model.Card
     .findAll({
       where: {
-        id: {
+        name: {
           $in: arrDeckList
         }
       }
@@ -28,5 +27,41 @@ router.get('/', (req, res) => {
     console.log(err)
   })
 })
+
+
+router.get('/edit', (req, res) => {
+  model.Player
+  .find({
+    where: {username: req.session.username},
+    include: [{
+      model: model.Card,
+  }]
+  })
+  .then(player => {
+    res.render('deckList/edit', {cards:player.Cards})
+  })
+  .catch(err=> {
+    console.log(err)
+  })
+})
+
+router.post('/edit', (req, res) => {
+  let str = req.body.card1 + ',' + req.body.card2 + ',' + req.body.card3 + ',' + req.body.card4 + ',' + req.body.card5
+  model.Player
+  .update({
+    deckCards: str
+  },{
+    where: {username: req.session.username},
+  })
+  .then(()=> {
+    res.redirect('/decklist')
+  })
+  .catch(err=> {
+    console.log(err)
+  })
+})
+
+
+
 
 module.exports = router;

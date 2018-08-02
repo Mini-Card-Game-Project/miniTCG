@@ -41,15 +41,8 @@ div.desc {
         <br>
         <br>
         <br>
-        <h1>Cards on the deck:</h1>
-        <br>
-        <%- include ./../partials/loopingDeck.ejs %>
-
-     
-
           <br>
           <br>
-          <a href="/decklist/edit">Edit deck</a>
           
           <br>
           <br>
@@ -57,7 +50,34 @@ div.desc {
           <h1>Cards you own:</h1>
 
         <%- include ./../partials/loopingCard.ejs %>
-        
+        <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          Write 5 card names you want to add to deck
+          <br>
+          <br>
+          <br>
+          <form action="/decklist/edit" method="POST">
+            Card #1:<br>
+            <input type="text" name="card1">
+            <br>
+            Card #2:<br>
+            <input type="text" name="card2">
+            <br><br>
+            Card #3:<br>
+            <input type="text" name="card3">
+            <br>
+            Card #4:<br>
+            <input type="text" name="card4">
+            <br><br>
+            Card #5:<br>
+            <input type="text" name="card5">
+            <br>
+            <input type="submit" value="Submit">
+          </form> 
     </section>
 
 </body>
