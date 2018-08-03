@@ -1,5 +1,6 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
+  const bcrypt = require('bcrypt')
   var Player = sequelize.define('Player', {
     username: {
       type: DataTypes.STRING,
@@ -44,6 +45,31 @@ module.exports = (sequelize, DataTypes) => {
       player.password = hash;
     });
    });
+
+   Player.prototype.winRate = function (){
+    return (this.wins / (this.wins + this.loses)).toFixed(2) * 100
+  }
+   Player.loginCheck = function (username, password, cb){
+    Player
+    .find({
+      where : {
+        username: username,
+      }
+    })
+    .then(player=> {
+      if(player){
+        bcrypt.compare(password, player.password, function(err, result) {
+          if (err){
+            throw err;
+          }
+          return cb(result);
+        })
+      } else {
+        return cb(null)
+      }
+    })
+    
+  }
    
   return Player;
 };

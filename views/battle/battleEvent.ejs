@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
-
-<head>
+ <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Home</title>
@@ -9,21 +8,16 @@
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
         crossorigin="anonymous">
         </script>
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-<link rel="stylesheet" type="text/css" media="screen" href="/public/battle.css" />
-</head>
-
-<body>
-
-        <embed src="/audio/NieR Automata OST - Memories of Dust (Dynamic - Vocals).mp3" width="180" height="90" loop="true" autostart="false"
-        hidden="true" />
-    <embed src="/audio/Cant escape from crossing fate (without music).mp3" width="180" height="90" loop="true" autostart="false"
-        hidden="true" />
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+     <link rel="stylesheet" type="text/css" media="screen" href="/public/battleEvent.css" />
+ </head>
+ <body>
     <div id="announcements"></div>
-
-    <header>
+    <embed src="/audio/[Persona 4 OST] 11 - Reach Out To The Truth -First Battle-.mp3" width="180" height="90" loop="true" autostart="false"
+    hidden="true" />
+    <embed src="/audio/Cant escape from crossing fate (without music).mp3" width="180" height="90" loop="true" autostart="false"
+    hidden="true" />
+     <header>
         <h1>Brave Fantasia</h1>
         <nav>
             <br>
@@ -31,34 +25,22 @@
             <a href="/">Home</a>
             <a href="#" id="myBtn">Login</a>
             <a href="/Users/adefahrisyany/Desktop/CSS%20Library/header/video_background/account/index.html" id="myBtn ">/Your Account/</a>
-            <button id="attack" class="bubbly-button" value="sound" onclick="engage(id)">Engage</button>
+             <button id="attack" class="bubbly-button" value="sound" onclick="engage(id)">Engage</button>
             <a href="#">How to play</a>
             <a href="#">Contact Us</a>
     </header>
-
-    <div class=UI>
-
+     <div class=UI>
         <div class="background">
-
-
             <div class="player1">
-
                 <div class="monster_player1">
                     <div id='animationLeader1' class="image1-leader">
                         <img src="https://i.imgur.com/o1qbgwK.png" alt="" height="100%" width="100%">
-
                     </div>​
-
                     <div id='animationMonster1' class="image1-monster">
-
-
-                    <img class="moving-right" id='plsme1' src="<%= monsters1.image %>" alt="" height="60%" width="60%">
+                        <img class="moving-right" id='plsme1' src="<%= monsters1.image %>" alt="" height="60%" width="60%">
                     </div>​
                 </div>
-
-
                 <div class="status_player1">
-
                     <div class="leader_status_player1">
                         Leader:
                         <br>
@@ -68,20 +50,16 @@
                         <input type="text" name="element">
                         <br> Effect:
                         <input type="text" name="effect">
-
+                        <br>Win
+                        <input type="text" value="*"> 
+                        <br>
                     </div>
-
-    
-
-                    <form id="player_1" action="/battle/match" method="post">
-
+                     <form id="player_1" action="/battle/match" method="post">
                         Monster:
-
                         <br>
                         <br> Name:
                         <input id="monsterPlayer1_name" type="text" value="<%=monsters1.name%>" readonly>
                         <br> Health
-
                         <input id="monsterPlayer1_health" type="text" value="<%=monsters1.health%>" readonly>
                         <br> element
                         <input id="monsterPlayer1_element" type="text" value="<%=monsters1.element%>" readonly>
@@ -93,51 +71,37 @@
                         <input id="monsterPlayer1_effect" type="text" value="<%=monsters1.effect%>" readonly>
                         <br>
                         <div class='progress-container1'>
-                                <div id="monster_player1" class='progress-bar1'>
-                                
+                            <div id="monster_player1" class='progress-bar1'>
                             </div>
                         </div>
-                    </div>
                 </div>
-
-
-            <div class="player2">
-            
+            </div>
+             <div class="player2">
                 <div class="monster_player2">
-                   <div id='animationLeader2' class="image2-leader">
-                        <img src="https://i.imgur.com/XvZhqJb.png" alt="" height="100%" width="100%">
-                     </div>​
+                    <div id='animationLeader2' class="image2-leader">
+                        <img src="<%= boss.image %>" alt="" height="100%" width="100%">
+                    </div>​
                     <div id='animationMonster2' class="image2-monster">
                         <img class="moving-left" id='plsme2' src="<%= monsters2.image %>" alt="" height="60%" width="60%">
-      
-
-
-
                     </div>​
                 </div>
-
                 <div class="status_player2">
-
                     <div class="leader_status_player2">
                         :Leader
                         <br>
                         <br>
-
-
-                        <input type="text" name="name"> Name
+                        <input type="text" value="<%= boss.name %>">Name
                         <br>
-
-                        <input type="text" name="element"> Element
+                        <input type="text" value="<%= boss.element %>"> Element
                         <br>
-
-                        <input type="text" name="effect"> Effect
-
-                        <input type="text" value="<%=win2%>"> win
+                        <input type="text" value="<%= boss.effect %>"> Effect
+                        <input type="text" value="*"> win
                     </div>
                     :Monster
                     <br>
                     <br>
-
+                    <input id="monsterPlayer2_name" type="text" value="<%=monsters2.name%>" readonly>
+                    <br>
                     <input id="monsterPlayer2_health" type="text" value="<%=monsters2.health%>" readonly>
                     <br>
                     <input id="monsterPlayer2_element" type="text" value="<%=monsters2.element%>" readonly>
@@ -152,28 +116,11 @@
                         <div id="monster_player2" class='progress-bar2'>
                         </div>
                     </div>
-
                 </div>
-
-
-
-
             </div>
-
-
-
         </div>
-
-
-
     </div>
-    <!-- Trigger/Open The Modal -->
-
-
-    <!-- The Modal -->
-    <script src="/public/battle.js"></script>
-</form>
-
-</body>
-
-</html>
+     <script src="/public/battle.js"></script>
+    </form>
+ </body>
+ </html> 

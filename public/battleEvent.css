@@ -2,26 +2,21 @@
   font-family: Moderne Sans;
   src: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/moderne_sans.woff2);
 }
-
-* {
+ * {
   box-sizing: border-box;
 }
-
-.UI {
+ .UI {
   text-align: center;
 }
-
-.player1 {
+ .player1 {
   width: 50%;
   height: 100%;
   float: left;
 }
-
-.status_player1 {
+ .status_player1 {
   /* border: blue solid 3px; */
   padding-top: 10px;
-
-  height: 20%;
+   height: 20%;
   position: absolute;
   bottom: 0;
   width: 50%;
@@ -35,10 +30,11 @@
   margin-top: 180px;
   height: 58%;
 }
-
-.image1-leader {
-  width: 280px;
+ .image1-leader {
+  /* border: green solid 3px; */
+   width: 280px;
   float: left;
+  
 }
 .leader_status_player1 {
   /* border: purple solid 3px; */
@@ -46,14 +42,12 @@
   width: 280px;
   height: 150px;
 }
-
-.player2 {
+ .player2 {
   width: 50%;
   height: 100%;
   display: inline-block;
 }
-
-.status_player2 {
+ .status_player2 {
   /* border: red solid 3px; */
   padding-top: 10px;
   height: 20%;
@@ -64,32 +58,29 @@
   text-align: left;
   background-color: rgba(255, 255, 255, 0.2);
 }
-
-.monster_player2 {
+ .monster_player2 {
   /* border: orange solid 3px; */
   margin-top: 180px;
   height: 58%;
 }
 .image2-leader {
-  width: 280px;
+    /* border: green solid 3px; */
+   width: 280px;
   float: right;
 }
-
-.leader_status_player2 {
+ .leader_status_player2 {
   /* border: green solid 3px; */
   float: right;
   width: 280px;
   height: 150px;
 }
-
-.background {
-  background: url("https://i.imgur.com/m102IID.jpg");
+ .background {
+  background: url("https://i.imgur.com/bzwamKs.jpg");
   margin-top: 0px;
   height: 800px;
   /* border: red solid 3px; */
 }
-
-body {
+ body {
   margin: 0;
   background: #000;
   background-size: cover;
@@ -118,7 +109,6 @@ header {
   height: 180px;
 }
 header:hover {
-
   background: rgba(255, 255, 255, 0);
 }
 h1 {
@@ -142,8 +132,7 @@ h2 {
   color: #fff;
   font-weight: 100;
 }
-
-.bubbly-button {
+ .bubbly-button {
   font-family: "Helvetica", "Arial", sans-serif;
   display: inline-block;
   font-size: 1em;
@@ -318,8 +307,7 @@ h2 {
   height: 50px;
   background-color: green
 }
-
-.progress-container2{
+ .progress-container2{
   width: 720px; 
   height: 10px;
   background-color: white;
@@ -328,4 +316,3 @@ h2 {
  .progress-bar2{
   height: 50px;
   background-color: green
-}

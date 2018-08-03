@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+ <head>
+    <%- include('../partials/head.ejs') %>
+</head>
+ <body>
+    <header>
+            <%- include ./../partials/header.ejs %>
+    </header>
+    <section class="content">
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        Create Lobby:
+        <br>
+        <br>
+        <form action="/lobby" class="form-wrapper" method='POST'>
+            <fieldset class="section is-active">
+              <input type="text" name="lobby name" id="name" placeholder="Name">
+              <button type="submit">Create Lobby</button>
+            </fieldset>
+          </form>
+        <br>
+        <br>
+        <br>
+        <table id="customers">
+            <img src="<%= player.avatar %>" width="270" height="270">
+                <tr>
+                    <th>Lobby</th>
+                    <th>Opponent</th>
+                    <th>Join</th>
+                </tr>
+                <tr>
+                    <% for (let i = 0; i <lobbies.length; i++){ %>
+                        <td><%= i+1 %></td>
+                        <td><%= players[i].username %></td>
+                        <td><a href="/lobby/join/<%= lobbies[i].id %>">Join</a></td>
+                    <% } %>
+                </tr>
+                </table>
+    </section>
+ </body>
+ </html> 

@@ -1,8 +1,6 @@
-
 const express = require('express');
 const app = express();
 const session = require('express-session');
-const ejs = require ('ejs');
 const routes = require ('./routes')
 const path = require ('path');
 
@@ -18,7 +16,7 @@ app.use("/audio", express.static(path.join(__dirname + "/audios")));
 app.use(session({
     secret: 'hello world',
     resave: false,
-    saveUninitialized: true,
+    saveUninitialized: false,
   }))
   
 app.use('/', routes);
