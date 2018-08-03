@@ -14,6 +14,9 @@ module.exports = {
       Player2Id: {
         type: Sequelize.INTEGER
       },
+      lobbyName: {
+        type: Sequelize.STRING
+      },
       createdAt: {
         defaultValue:new Date(),
         allowNull: false,

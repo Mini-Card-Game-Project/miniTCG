@@ -47,7 +47,10 @@ module.exports = (sequelize, DataTypes) => {
    });
 
    Player.prototype.winRate = function (){
-    return (this.wins / (this.wins + this.loses)).toFixed(2) * 100
+    if(this.wins > 0 && this.loses > 0){
+      return (this.wins / (this.wins + this.loses)).toFixed(2) * 100
+    }
+    return 'Not available yet'
   }
    Player.loginCheck = function (username, password, cb){
     Player

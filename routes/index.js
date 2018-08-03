@@ -10,7 +10,6 @@ const isLoggedIn = require ('../helpers/isLoggedIn');
 
 router.get('/', (req, res) => {
   model.Boss.findAll().then(boss => {
-    // res.json(boss);
     
     res.render("./home/index", {errors: null, boss:boss });
   });
@@ -30,9 +29,11 @@ router.post('/', (req, res)=> {
       res.render('home/index', {errors: [{message: 'Username not found, register first!'}]})
     }
   })
-  .catch(err => {
-    console.log(err);
-  })
+})
+
+router.get('/logout', (req, res)=> {
+  req.session.destroy();
+  res.redirect('/')
 })
 
 router.use('/account', isLoggedIn, account);

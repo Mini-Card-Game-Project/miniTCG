@@ -3,16 +3,23 @@
 
 <head>
     <%- include ./../partials/head.ejs %>
+    <% if(boss.length) {%>
+        <div class="alert">
+            <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+            <strong>Danger!</strong> Powerfull Boss Arrives. <a href="/battle/event">Battle!</a> 
+        </div>
+        <%}%> 
 </head>
 
 <body>
 
-        <%- include ./../partials/errors.ejs %>
-    <header>
-         <video poster="http://jonvilma.com/images/granblue-fantasy-5.jpg" playsinline autoplay muted loop>
+
+        <video poster="http://jonvilma.com/images/granblue-fantasy-5.jpg" playsinline autoplay muted loop>
             <source src="/videos/OnlineYouTube.webm" type="video/webm">
         </video>
-        
+
+        <%- include ./../partials/errors.ejs %>
+    <header>
         <%- include ./../partials/header.ejs %>
     </header>
   
@@ -51,9 +58,9 @@
                         </h4>
                         <p>Welcome back! Log in to your account to play:</p>
                         <div class="floating-label">
-                            <input placeholder="Username" type="username" name="username" id="username" autocomplete="off">
-                            <label for="username">Username:</label>
-                            <div class="icon">
+                                <input placeholder="Email" type="text" name="username" id="email" autocomplete="off">
+                                <label for="email">Username:</label>
+                                <div class="icon">
                                     <?xml version="1.0" encoding="UTF-8"?>
                                     <svg enable-background="new 0 0 100 100" version="1.1" viewBox="0 0 100 100
             " xml:space="preserve" xmlns="http://www.w3.org/2000/svg">
@@ -101,7 +108,7 @@
 
                         </div>
                         <button type="submit" >Log in</button>
-                        <a href="/registration" class="discrete" target="_blank">Register</a>
+                        <a href="/registration" class="discrete">Register</a>
                     </form>
                 </div>
             </body>
