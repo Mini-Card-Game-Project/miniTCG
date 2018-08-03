@@ -117,7 +117,7 @@ function engage() {
         $("#plsme1").fadeOut(1000); // 5 seconds x 1000 milisec = 5000 milisec
         clearInterval(interval);
 
-        window.prompt("Return To Home", "you gain 1000 gil!!");
+        window.prompt("play again", "you gain 1000 gil!!");
         location.href = "/";
       });
     }
@@ -130,7 +130,7 @@ function engage() {
         clearInterval(interval);
         // alert(currentHealth2);
 
-        window.prompt("Return To Home", "you gain 1000 gil!!");
+        window.prompt("play again", "you gain 1000 gil!!");
         location.href = "/";
       });
     }

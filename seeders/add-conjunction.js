@@ -10,26 +10,44 @@ module.exports = {
  
     */
     return queryInterface.bulkInsert(
-      "Players",
+      "CardPlayers",
       [
         {
-          username: 'Adefs',
-          password: '12345678',
-          deposit: 99999999,
-          avatar: 'https://i.imgur.com/1JhhLUb.png'
+          CardId: 1,
+          PlayerId: 3,
         },
         {
-          username: 'bryan',
-          password: '12345678',
-          deposit: 99999999,
-          avatar: 'https://i.imgur.com/qew8zMv.png'
+          CardId: 2,
+          PlayerId: 3,
         },
         {
-          username: 'test1234',
-          password: '12345678',
-          deposit: 99999999,
-          avatar: 'https://i.imgur.com/qew8zMv.png'
-        }
+          CardId: 3,
+          PlayerId: 3,
+        },
+        {
+          CardId: 4,
+          PlayerId: 3,
+        },
+        {
+          CardId: 5,
+          PlayerId: 3,
+        },
+        {
+          CardId: 6,
+          PlayerId: 3,
+        },
+        {
+          CardId: 7,
+          PlayerId: 3,
+        },
+        {
+          CardId: 8,
+          PlayerId: 3,
+        },
+        {
+          CardId: 9,
+          PlayerId: 3,
+        },
       ],
       {}
     );
