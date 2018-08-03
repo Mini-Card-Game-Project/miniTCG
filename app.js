@@ -18,7 +18,7 @@ app.use("/audio", express.static(path.join(__dirname + "/audios")));
 app.use(session({
     secret: 'hello world',
     resave: false,
-    saveUninitialized: true,
+    saveUninitialized: false,
   }))
   
 app.use('/', routes);

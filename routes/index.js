@@ -13,7 +13,6 @@ router.get('/', (req, res) => {
 })
 
 router.post('/', (req, res)=> {
-  console.log(req.body)
   model.Player
   .loginCheck(req.body.username, req.body.password, (result) => {
     if (result != null){
