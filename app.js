@@ -3,6 +3,7 @@ const app = express();
 const session = require('express-session');
 const routes = require ('./routes')
 const path = require ('path');
+const port = process.env.PORT || 3000
 
 app.set ('view engine', 'ejs')
 app.set ('views', path.join(__dirname, 'views'))
@@ -22,6 +23,6 @@ app.use(session({
 app.use('/', routes);
 
 
-app.listen(3000, ()=> {
-  console.log('listening to 3000')
+app.listen(port, ()=> {
+  console.log('listening')
 })

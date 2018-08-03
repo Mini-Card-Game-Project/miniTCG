@@ -44,20 +44,17 @@ router.get("/", (req, res) => {
         if (req.session.monster_player1.health < 0) {
           req.session.monster_player1.health = 0;
           console.log(req.session.monster_player1.name);
-
         }
 
         if (req.session.monster_player2.health < 0) {
           req.session.monster_player2.health = 0;
           console.log(req.session.monster_player2.name);
-
         }
       });
       res.render("battle/battle", {
         monsters: monsters,
         monsters1: req.session.monster_player1,
         monsters2: req.session.monster_player2
-
       });
     });
   });
@@ -90,14 +87,27 @@ router.get("/event", (req, res) => {
         }
 
         if (req.session.monster_player2.health > 0) {
-          req.session.monster_player2.health -=
-            req.session.monster_player1.attack;
+          let damage_player1;
+          let skill = "Tachyon blue";
+          if (skill == "Tachyon blue") {
+            if (req.session.monster_player1.element == "water") {
+              damage_player1 = req.session.monster_player1.attack + 10;
+            }
+          }
+          req.session.monster_player2.health -= damage_player1;
           calculateHealth_2();
         }
 
         if (req.session.monster_player1.health > 0) {
-          req.session.monster_player1.health -=
-            req.session.monster_player2.attack;
+          let damage_player2;
+          let skill = "Damnation";
+          if (skill == "Damnation") {
+            if (req.session.monster_player2.element == "dark") {
+              damage_player2 = req.session.monster_player2.attack + 30;
+            }
+          }
+
+          req.session.monster_player1.health -= damage_player2;
           calculateHealth_1();
         }
 
