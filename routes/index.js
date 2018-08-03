@@ -23,7 +23,11 @@ router.post('/', (req, res)=> {
         req.session.username = req.body.username;
         res.redirect('/account')
       } else {
-        res.render('home/index', {errors: [{message: 'wrong password'}]})
+        model.Boss
+        .findAll()
+        .then((boss)=> {
+          res.render('home/index', {errors: [{message: 'wrong password'}], boss:boss})
+        })
       }
     } else {
       res.render('home/index', {errors: [{message: 'Username not found, register first!'}]})
